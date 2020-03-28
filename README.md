@@ -12,3 +12,5 @@ bin[folder]
 
 Click tiles to replace them.
 
+## Capture
+<img src="https://github.com/obakyan/atcoder_xmas2019_visualizer/blob/master/test.gif" alt="capture">

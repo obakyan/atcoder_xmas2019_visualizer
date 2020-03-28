@@ -14,3 +14,10 @@ Click tiles to replace them.
 
 ## Capture
 <img src="https://github.com/obakyan/atcoder_xmas2019_visualizer/blob/master/test.gif" alt="capture">
+
+# Build from source code
+
+This tool is created by using LÖVE 2d. (11.2)
+https://love2d.org/
+
+

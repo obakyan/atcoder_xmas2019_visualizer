@@ -4,6 +4,7 @@ local pic = {}
 local design = nil
 local focus = 0
 
+
 function love.load()
   for i = 1, 64 do
     pic[i] = {}
@@ -13,7 +14,59 @@ function love.load()
   design = love.graphics.newImage("design.png")
 end
 
+local function load()
+  local f = io.open("out.lua", "r")
+  if f then
+    f:read("*l")
+    local s = f:read("*l")
+    local i = 0
+    for w in s:gmatch("%d+") do
+      i = i + 1
+      pic[tonumber(w)].pos = i
+    end
+    f:close()
+  end
+end
+
+local function save()
+  local f = io.open("out.lua", "w")
+  f:write("-- https://github.com/obakyan/atcoder_xmas2019_visualizer\n")
+  local picidx = {}
+  for i = 1, 64 do
+    picidx[i] = 0
+  end
+  for i = 1, 64 do
+    local pos = pic[i].pos
+    picidx[pos] = i
+  end
+  f:write("-- " .. table.concat(picidx, " ") .."\n")
+  -- print(1 .. " " .. 2 .. " " .. 3)
+  for i = 1, 64 do
+    if i % 8 == 1 then
+      f:write("print(" .. picidx[i])
+    else
+      f:write(" .. \" \" .. " .. picidx[i])
+      if i % 8 == 0 then
+        f:write(")\n")
+      end
+    end
+  end
+  f:close()
+end
+
+function love.keypressed(key, scancode, rep)
+  if key == "s" then
+    save()
+  elseif key == "r" then
+    if love.keyboard.isDown("lshift") or love.keyboard.isDown("rshift") then
+      load()
+    end
+  end
+end
+
 function love.draw()
+  love.graphics.print("press [s] to save", 0, 256)
+  love.graphics.print("press [shift + r] to load", 0, 288)
   love.graphics.draw(design, 256, 256)
   for i = 1, 64 do
     local pos = pic[i].pos
@@ -29,6 +82,12 @@ function love.draw()
       love.graphics.setColor(255, 255, 255)
     end
   end
+  love.graphics.setColor(128, 0, 255)
+  for i = 1, 7 do
+    love.graphics.line(32 * i, 0, 32 * i, 256)
+    love.graphics.line(0, 32 * i, 256, 32 * i)
+  end
+  love.graphics.setColor(255, 255, 255)
   if 0 < focus then
     for i = 1, 64 do
       if i == focus then

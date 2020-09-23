@@ -1,18 +1,16 @@
-This is a visualizer tool for https://atcoder.jp/contests/xmascon19/tasks/xmascon19_a .
+下記問題のビジュアライザです。
+https://atcoder.jp/contests/xmascon19/tasks/xmascon19_a
 
-# Usage
-Copy resources ( `design.png` and `pieces` folder) to bin folder.
+# 入手
 
-```
-bin[folder]
-  - xmas2019_a_visualizer.exe
-  - design.png
-  - pieces[folder]
-```
+https://github.com/obakyan/atcoder_xmas2019_visualizer/releases/tag/1.0
 
-Click tiles to replace them.
+# 使い方
+タイルをクリックして位置を交換します。
+Sキーで out.lua に結果を保存します。
+Shift + Rキーでロードします。
 
-## Capture
+## キャプチャ
 <img src="https://github.com/obakyan/atcoder_xmas2019_visualizer/blob/master/test.gif" alt="capture">
 
 # Build from source code

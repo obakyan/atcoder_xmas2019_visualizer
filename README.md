@@ -1,4 +1,4 @@
-下記問題のビジュアライザです。
+下記問題のビジュアライザです。<br>
 https://atcoder.jp/contests/xmascon19/tasks/xmascon19_a
 
 # 入手
@@ -6,8 +6,8 @@ https://atcoder.jp/contests/xmascon19/tasks/xmascon19_a
 https://github.com/obakyan/atcoder_xmas2019_visualizer/releases/tag/1.0
 
 # 使い方
-タイルをクリックして位置を交換します。
-Sキーで out.lua に結果を保存します。
+タイルをクリックして位置を交換します。<br>
+Sキーで out.lua に結果を保存します。<br>
 Shift + Rキーでロードします。
 
 ## キャプチャ
